@@ -7,7 +7,7 @@ public class Carro {
     private String year;
     private String color;
     private String power;
-ea
+
     public Carro(String brand, String year, String color, String power) {
         this.id = contador++;
         this.brand = brand;
