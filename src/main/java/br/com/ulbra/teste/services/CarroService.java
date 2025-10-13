@@ -15,13 +15,11 @@ public class CarroService {
     }
 
     public Carro getById(int id) {
-        Carro carro = this.carroRepository.getCarros()
+        return this.carroRepository.getCarros()
                 .stream()
                 .filter(item -> item.getId() == id)
                 .findFirst()
-                .get();
-
-        return carro;
+                .orElse(null);
     }
 
     public List<Carro> getCarros() {
@@ -30,5 +28,13 @@ public class CarroService {
 
     public void criaCarro(Carro body) {
         this.carroRepository.criaCarro(body);
+    }
+
+    public boolean deleteCarro(int id) {
+        return this.carroRepository.deleteCarro(id);
+    }
+
+    public boolean updateCarro(Carro carro) {
+        return this.carroRepository.updateCarro(carro);
     }
 }
